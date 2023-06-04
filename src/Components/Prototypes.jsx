@@ -3,12 +3,14 @@ import useActions from "../hooks/useActions";
 
 export default function Prototypes() {
   const prototypes = usePrototypes();
+
   const { addToOrder } = useActions();
+
   return (
     <main>
       <div className="prototypes">
         {prototypes.map((prototype) => {
-          const { id, thumbnail, title, price, desc, pieUrl } = prototype;
+          const {id, thumbnail, title, price, desc, pieUrl } = prototype;
           const click = () => {
             addToOrder(id);
           };
